@@ -1,8 +1,7 @@
 FROM debian:jessie
-MAINTAINER itech
 
-ENV OPENFIRE_VERSION 3.9.3
-ENV VIDEOBRIDGE_VERSION 370
+ENV OPENFIRE_VERSION 3.10.0
+ENV VIDEOBRIDGE_VERSION 446
 
 RUN apt-get update \
  && apt-get install --no-install-recommends -y sudo wget openjdk-7-jre unzip\
@@ -17,7 +16,7 @@ RUN apt-get update \
  && apt-get purge --auto-remove -y wget unzip \
  && rm -rf /var/lib/apt/lists/*
 
-COPY jitsivideobridge.jar /usr/share/openfire/plugins/jitsivideobridge.jar
+COPY ofmeet.jar /usr/share/openfire/plugins/ofmeet.jar
 COPY start /start
 RUN chmod 755 /start
 
