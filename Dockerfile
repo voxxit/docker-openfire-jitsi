@@ -18,20 +18,12 @@ RUN apt-get update \
 
 COPY ofmeet.jar /usr/share/openfire/plugins/ofmeet.jar
 COPY start /start
+
 RUN chmod 755 /start
 
-EXPOSE 3478
-EXPOSE 3479
-EXPOSE 5222
-EXPOSE 5223
-EXPOSE 5229
-EXPOSE 5275
-EXPOSE 7070
-EXPOSE 7443
-EXPOSE 7777
-EXPOSE 9090
-EXPOSE 9091
+EXPOSE 3478-3479 5222-5223 5229 5275 7070 7443 7777 9090-9091 50000-60000
 
-VOLUME ["/data"]
-CMD ["/start"]
+VOLUME [ "/data" ]
+
+CMD [ "/start" ]
 
