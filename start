@@ -9,7 +9,7 @@ MAX_PORT=${MAX_PORT:-60000}
 ENABLE_JVB=${ENABLE_JVB:-true}
 SUBDOMAIN=${SUBDOMAIN:-jitsi-videobridge}
 XMS=${XMS:-32m}
-XMX=${XMX:-256m}
+XMX=${XMX:-1024m}
 
 chmod 775 /data
 mkdir -p /data/openfire
